@@ -1,5 +1,6 @@
 "use client";
 
+import { SiteImage } from "@/components/SiteImage";
 import { asset } from "@/lib/assets";
 import {
   heroChapters,
@@ -11,7 +12,6 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -132,7 +132,7 @@ export function Hero() {
     >
       <div className={`relative overflow-hidden ${reduce ? "min-h-screen" : "sticky top-0 h-screen"}`}>
         {videoFailed ? (
-          <Image
+          <SiteImage
             src="/images/furnace-cutaway.png"
             alt="Cutaway of an Alpha Equipments cremation furnace with the refractory chamber at heat"
             fill

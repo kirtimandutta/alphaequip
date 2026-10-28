@@ -1,11 +1,10 @@
 "use client";
 
 import { SectionLabel } from "@/components/SectionLabel";
+import { SiteImage } from "@/components/SiteImage";
 import { useInquiry } from "@/components/providers";
 import { inquiryRoles, trustBadges, turnkeyScopes } from "@/lib/data";
 import { Building2, Factory, Layers, Wind } from "lucide-react";
-import Image from "next/image";
-
 const icons = {
   civil: Building2,
   stack: Factory,
@@ -47,7 +46,7 @@ export function Turnkey() {
 
         <figure className="relative mt-8 overflow-hidden rounded-[2rem] border border-purple-500/20">
           <div className="relative aspect-[669/373] md:aspect-[2.4/1]">
-            <Image
+            <SiteImage
               src="/images/wet-scrubber.png"
               alt="Stainless steel air pollution control skid with scrubber vessels, purple process lines, and a fabricated stack"
               fill

@@ -1,6 +1,7 @@
 "use client";
 
 import { CountUp } from "@/components/CountUp";
+import { SiteImage } from "@/components/SiteImage";
 import { FrameCorners } from "@/components/FrameCorners";
 import { SectionLabel } from "@/components/SectionLabel";
 import { useInquiry, useMachine } from "@/components/providers";
@@ -9,7 +10,6 @@ import { formatIN, formatINR } from "@/lib/format";
 import { downloadSpecification } from "@/lib/tds";
 import { motion, useMotionValue, useReducedMotion, useTransform } from "framer-motion";
 import { ArrowRight, FileDown } from "lucide-react";
-import Image from "next/image";
 import { useState, type KeyboardEvent } from "react";
 
 const views = [
@@ -80,7 +80,7 @@ export function Configurator() {
           >
             <FrameCorners />
             <div className="relative aspect-[669/373]">
-              <Image
+              <SiteImage
                 src={photo.src}
                 alt={photo.alt}
                 fill

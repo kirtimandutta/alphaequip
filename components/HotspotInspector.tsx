@@ -1,12 +1,12 @@
 "use client";
 
 import { FrameCorners } from "@/components/FrameCorners";
+import { SiteImage } from "@/components/SiteImage";
 import { SectionLabel } from "@/components/SectionLabel";
 import { useSite } from "@/components/providers";
 import { hotspots, type Hotspot } from "@/lib/data";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export function HotspotInspector() {
@@ -45,7 +45,7 @@ export function HotspotInspector() {
           <div className="pointer-events-none absolute left-[22%] top-1/2 h-48 w-48 -translate-y-1/2 rounded-full bg-yellow-400/15 blur-3xl" />
           <div className="pointer-events-none absolute right-[18%] top-[20%] h-48 w-48 rounded-full bg-purple-500/20 blur-3xl" />
           <div className="relative mx-auto aspect-[669/373] max-w-5xl">
-            <Image
+            <SiteImage
               src="/images/furnace-cutaway.png"
               alt="Interactive cutaway of the Alpha Equipments furnace, with pins on the chamber, re-combustion path, controls, and scrubber ducts"
               fill
@@ -159,7 +159,7 @@ function TechnicalDrawer({ spot, onClose }: { spot: Hotspot; onClose: () => void
         </h3>
         <p className="mt-4 text-sm leading-7 text-zinc-300">{spot.summary}</p>
         <div className="relative mt-6 aspect-[669/373] overflow-hidden rounded-2xl border border-white/10">
-          <Image src={spot.image} alt={spot.imageAlt} fill sizes="480px" className="object-cover" />
+          <SiteImage src={spot.image} alt={spot.imageAlt} fill sizes="480px" className="object-cover" />
         </div>
         <ul className="mt-6 space-y-3">
           {spot.points.map((point) => (
